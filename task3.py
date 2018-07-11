@@ -1,8 +1,8 @@
-import psutil
-from datetime import datetime
 from configparser import ConfigParser
+from datetime import datetime
 import json
 import os.path
+import psutil
 
 
 def getsnapshot(f):
