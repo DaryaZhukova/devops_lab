@@ -1,5 +1,5 @@
-from crontab import CronTab
 from configparser import ConfigParser
+from crontab import CronTab
 parser = ConfigParser()
 parser.read('simple.ini')
 my_cron = CronTab(user='student')
