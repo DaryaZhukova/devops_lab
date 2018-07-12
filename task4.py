@@ -4,7 +4,7 @@ import psutil
 import time
 
 
-class Snapshot:
+class Snapshot(object):
     "Class that operates snapshots"
     snapshot_count = 1
 
