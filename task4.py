@@ -28,7 +28,7 @@ class Snapshot(object):
         self.sysdata["SNAPSHOT {1}: {0} Byte sent: ".format(d, i)] = sent
         rec = psutil.net_io_counters()[1]
         self.sysdata["SNAPSHOT {1}: {0} Byte received: ".format(d, i)] = rec
-        return(self.sysdata)
+        return (self.sysdata)
 
     def __str__(self):
         listdata = []
