@@ -37,13 +37,13 @@ class Snapshot(object):
         return ("{} {}\n" * 6).format(*listdata)
 
     def writetxt(self, f):
-        with open(f, 'a') as file:
-            file.write(str(system_snapshot))
+        with open(f, 'a') as myfile:
+            myfile.write(str(system_snapshot))
 
     def writejson(self, f):
-        with open(f, 'a') as file:
-            file.write(system_snapshot.sysdata)
-            file.write("\n")
+        with open(f, 'a') as myfile:
+            myfile.write(system_snapshot.sysdata)
+            myfile.write("\n")
 
 
 parser = ConfigParser()
