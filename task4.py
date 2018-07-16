@@ -17,17 +17,22 @@ class Snapshot(object):
         "This get system information"
         d = datetime.now(tz=None)
         cpu = psutil.cpu_percent(interval=1)
-        self.sysdata = {"SNAPSHOT {1}: {0} CPU load is, %: ".format(d, i): cpu}
+        self.sysdata = {
+            "SNAPSHOT {1}: {0} CPU load is, %: ".format(d, i): cpu}
         mem = round(psutil.virtual_memory()[3] / (1024.0 ** 2), 1)
-        self.sysdata["SNAPSHOT {1}: {0} Mem usage is, %: ".format(d, i)] = mem
+        self.sysdata[
+            "SNAPSHOT {1}: {0} Mem usage is, %: ".format(d, i)] = mem
         vmem = round(psutil.virtual_memory()[1] / (1024.0 ** 2), 1)
-        self.sysdata["SNAPSHOT {1}: {0} Virt mem is, %: ".format(d, i)] = vmem
+        self.sysdata[
+            "SNAPSHOT {1}: {0} Virt mem is, %: ".format(d, i)] = vmem
         IO = round(psutil.disk_usage('/')[1] / (1024.0 ** 3), 1)
-        self.sysdata["SNAPSHOT {1}: {0} IO used is, Gb: ".format(d, i)] = IO
+        self.sysdata[
+            "SNAPSHOT {1}: {0} IO used is, Gb: ".format(d, i)] = IO
         sent = psutil.net_io_counters()[0]
         self.sysdata["SNAPSHOT {1}: {0} Byte sent: ".format(d, i)] = sent
         rec = psutil.net_io_counters()[1]
-        self.sysdata["SNAPSHOT {1}: {0} Byte received: ".format(d, i)] = rec
+        self.sysdata[
+            "SNAPSHOT {1}: {0} Byte received: ".format(d, i)] = rec
         return (self.sysdata)
 
     def __str__(self):
@@ -51,7 +56,8 @@ parser.read("simple1.ini")
 logtype = parser.get("common", "output")
 interval = parser.get("common", "interval")
 system_snapshot = Snapshot(logtype, interval, {})
-print("System data will be collected %s times" % parser.get("common", "times"))
+print("System data will be collected %s times" % parser.get("common",
+                                                            "times"))
 for n in range(int(parser.get("common", "times"))):
     if system_snapshot.logtype == "txt":
         print(system_snapshot)
