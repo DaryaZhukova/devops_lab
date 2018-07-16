@@ -90,4 +90,4 @@ elif args.n:
 elif args.s:
     userrequests(getinfo(args.id, args.r, args.u, args.p), args.s)
 else:
-    write("error")
+    print("error")
