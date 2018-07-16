@@ -1,6 +1,5 @@
-from unittest import TestCase
 import task6_2
-
+from unittest import TestCase
 
 class TestPrime(TestCase):
 
