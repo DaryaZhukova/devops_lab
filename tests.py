@@ -1,6 +1,7 @@
 import task6_2
 from unittest import TestCase
 
+
 class TestPrime(TestCase):
 
     def setUp(self):
