@@ -19,40 +19,40 @@ def virt_env():
             "{0} && {1} && lsvirtualenv".format(sor, hom)):
         if item not in ("\n", "=====\n", "====\n"):
             a.append(item.replace("\n", ""))
-    return(a)
+    return a
 
 
 def current_version():
-    return (os.popen("pyenv version").read())
+    return os.popen("pyenv version").read()
 
 
 def packages_instaled():
-    return (pip.utils.get_installed_distributions())
+    return pip.utils.get_installed_distributions()
 
 
 def site_packages():
-    return (site.getsitepackages()[0])
+    return site.getsitepackages()[0]
 
 
 def pyth_path():
     a = []
     for item in sys.path:
         a.append(str(item))
-    return(a)
+    return a
 
 
 def pip_path():
     for n in sys.path:
         if os.path.isdir("{}{}".format(n, '/pip')):
-            return ("{}{}".format(n, '/pip'))
+            return "{}{}".format(n, '/pip')
 
 
 def python_path():
-    return (sys.executable)
+    return sys.executable
 
 
 def get_aliases():
-    return (os.popen("pyenv versions").read())
+    return os.popen("pyenv versions").read()
 
 
 def write_yaml(mydict):
